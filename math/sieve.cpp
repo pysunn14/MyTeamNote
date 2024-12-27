@@ -3,8 +3,11 @@
 // O(n*loglogn)
 void sieve(int n, bool prime[]) 
 {
+    // prime : init to all true
+    
+    prime[1] = false;
     for (int i = 2; i * i <= n; ++i)
-        if (prime[i]) for (int j = i * i; j <= n; j += i) prime[i] = false;
+    if (prime[i]) for (int j = i * i; j <= n; j += i) prime[j] = false;
 }
 
 // calculate number of divisors for 1 ~ n
